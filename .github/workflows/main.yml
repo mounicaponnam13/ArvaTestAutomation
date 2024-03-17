@@ -32,17 +32,17 @@ jobs:
           docker-compose up -d --build
           docker-compose down
           docker-compose up -d
-        working-directory: ArvaTestAutomation
+        working-directory: tech-review-qacicd
 
       - name: Run Selenium Tests
         run: |
-          docker-compose run web python Tests/WebUIAutomation.py
-        working-directory: ArvaTestAutomation
+          docker-compose run web python WebUIAutomation.py
+        working-directory: Tests
 
       - name: Run Python Unit Tests
         run: |
-          docker-compose run web python Tests/full_test.py
-        working-directory: ArvaTestAutomation
+          docker-compose run web python full_test.py
+        working-directory: Tests
 
   deploy:
     runs-on: ubuntu-latest
