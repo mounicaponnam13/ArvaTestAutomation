@@ -36,13 +36,13 @@ jobs:
 
       - name: Run Selenium Tests
         run: |
-          docker-compose run web python WebUIAutomation.py
-        working-directory: Tests
+          docker-compose run web python Tests/WebUIAutomation.py
+        working-directory: tech-review-qacicd
 
       - name: Run Python Unit Tests
         run: |
-          docker-compose run web python full_test.py
-        working-directory: Tests
+          docker-compose run web python Tests/full_test.py
+        working-directory: tech-review-qacicd
 
   deploy:
     runs-on: ubuntu-latest
